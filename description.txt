@@ -1,0 +1,29 @@
+Name: Ananya Gobbur 
+Project : Arbitrary Precision Calculator
+
+The Arbitrary Precision Calculator (APC) project is developed to perform arithmetic operations 
+on very large integers that cannot be handled by normal data types like int or long. 
+In C programming, primitive data types have size limitations, so they cannot store extremely 
+large numbers. To overcome this limitation, this project uses a doubly linked list to store 
+each digit of a number in a separate node. By doing this, the program can handle numbers of any 
+length depending on the available memory.
+
+The program takes two numbers and one operator as command line arguments. Before performing any
+operation, the input is validated to ensure that the operands contain only digits and optional 
+sign symbols. After validation, each number is converted from a string into a doubly linked list. 
+In this list, each node stores a single digit, and the digits are arranged in the same order as 
+the number. The head node represents the most significant digit and the tail node represents the 
+least significant digit.
+
+Addition and subtraction are performed by traversing the linked lists from tail to head, similar 
+to how manual arithmetic is done on paper. Carry is handled during addition and borrow is handled
+during subtraction. For subtraction, the program first compares the magnitudes of the two 
+numbers to decide the correct order and sign of the result. Multiplication is implemented using 
+the traditional method of multiplying each digit and adding partial results. 
+Division is implemented using repeated subtraction to determine the quotient.
+
+The project also handles negative numbers correctly by managing signs separately from the 
+magnitude of the numbers. Leading zeros are removed to ensure that the output is clean and 
+correct. Special cases such as division by zero are checked and handled properly to avoid 
+runtime errors. Dynamic memory allocation is used to create and manage the linked list nodes, 
+and memory is freed after use to prevent memory leaks.
